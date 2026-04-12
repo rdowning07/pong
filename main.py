@@ -1,8 +1,10 @@
+# Simple Pong game using Pygame
 import pygame
 
 print(pygame.version.ver)
 
 def main():
+    # Initialize Pygame and set up the game window
     pygame.init()
     screen = pygame.display.set_mode((800, 600))
     pygame.display.set_caption("Pong")
@@ -11,7 +13,7 @@ def main():
     running = True
     paddle_y = 250
     paddle2_y = 250
-#second paddle at 740
+    #while loop for game state
 
     while running:
         for event in pygame.event.get():
@@ -37,3 +39,4 @@ def main():
     pygame.quit()
 
 main()
+
