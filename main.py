@@ -36,8 +36,16 @@ def main():
             paddle2_y -= 5
         if keys[pygame.K_s]:
             paddle2_y += 5
+        
         ball_x += ball_dx
         ball_y += ball_dy
+
+        if ball_y - 8 <= 0 or ball_y + 8 >= 600:
+            ball_dy = -ball_dy
+        if (ball_x - 8 <= 60 and paddle_y < ball_y < paddle_y + 100) or (ball_x + 8 >= 730 and paddle2_y < ball_y < paddle2_y + 100):
+            ball_dx = -ball_dx
+        
+
         pygame.draw.rect(screen, (255, 255, 255), (50, paddle_y, 10, 100))
         pygame.draw.rect(screen, (255, 255, 255), (740, paddle2_y, 10, 100))
         pygame.draw.circle(screen, (255, 255, 255), (ball_x, ball_y), 8)
