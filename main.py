@@ -17,6 +17,8 @@ def main():
     ball_y = 300
     ball_dx = 4
     ball_dy = 4
+    score1 = 0
+    score2 = 0
     #while loop for game state
 
     while running:
@@ -50,6 +52,14 @@ def main():
         if ball_x + 8 >= 740 and paddle2_y < ball_y < paddle2_y + 100:
             ball_dx = -ball_dx
             ball_x = 732
+
+        if ball_x < 0:
+            score2 += 1
+            ball_x, ball_y = 400, 300
+
+        if ball_x > 800:
+            score1 += 1
+            ball_x, ball_y = 400, 300
 
         pygame.draw.rect(screen, (255, 255, 255), (50, paddle_y, 10, 100))
         pygame.draw.rect(screen, (255, 255, 255), (740, paddle2_y, 10, 100))
