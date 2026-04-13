@@ -6,6 +6,7 @@ print(pygame.version.ver)
 def main():
     # Initialize Pygame and set up the game window
     pygame.init()
+    font = pygame.font.Font(None, 74)
     screen = pygame.display.set_mode((800, 600))
     pygame.display.set_caption("Pong")
     clock = pygame.time.Clock()
@@ -60,6 +61,11 @@ def main():
         if ball_x > 800:
             score1 += 1
             ball_x, ball_y = 400, 300
+        
+        text1 = font.render(str(score1), True, (255, 255, 255))
+        text2 = font.render(str(score2), True, (255, 255, 255))
+        screen.blit(text1, (200, 20))
+        screen.blit(text2, (550, 20))
 
         pygame.draw.rect(screen, (255, 255, 255), (50, paddle_y, 10, 100))
         pygame.draw.rect(screen, (255, 255, 255), (740, paddle2_y, 10, 100))
