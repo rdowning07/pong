@@ -42,9 +42,14 @@ def main():
 
         if ball_y - 8 <= 0 or ball_y + 8 >= 600:
             ball_dy = -ball_dy
-        if (ball_x - 8 <= 60 and paddle_y < ball_y < paddle_y + 100) or (ball_x + 8 >= 730 and paddle2_y < ball_y < paddle2_y + 100):
+
+        if ball_x - 8 <= 60 and paddle_y < ball_y < paddle_y + 100:
             ball_dx = -ball_dx
-        
+            ball_x = 68
+
+        if ball_x + 8 >= 740 and paddle2_y < ball_y < paddle2_y + 100:
+            ball_dx = -ball_dx
+            ball_x = 732
 
         pygame.draw.rect(screen, (255, 255, 255), (50, paddle_y, 10, 100))
         pygame.draw.rect(screen, (255, 255, 255), (740, paddle2_y, 10, 100))
