@@ -40,6 +40,16 @@ def main():
             paddle2_y -= 5
         if keys[pygame.K_s]:
             paddle2_y += 5
+
+        if paddle_y < 0:
+            paddle_y = 0
+        if paddle_y > 500:
+            paddle_y = 500
+
+        if paddle2_y < 0:
+            paddle2_y = 0
+        if paddle2_y > 500:
+            paddle2_y = 500
  
         if score1 < 7 and score2 < 7:
     # all movement, input, collision code here
