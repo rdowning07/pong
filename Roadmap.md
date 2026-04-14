@@ -25,16 +25,16 @@ Each game is a level. You move on when you can explain every line of your code a
 Pong is not about Pong. It's about understanding the fundamental architecture that every game uses.
 
 ### Skills
-- [ ] The game loop (input → update → draw)
-- [ ] Variables and state
-- [ ] Functions
-- [ ] Pygame window, clock, fill, flip
-- [ ] Drawing shapes
-- [ ] Keyboard input
-- [ ] Moving objects (position + velocity)
-- [ ] Collision detection (rectangle vs rectangle, ball vs wall)
-- [ ] Keeping score
-- [ ] Game states (playing, game over, restart)
+- [x] The game loop (input → update → draw)
+- [x] Variables and state
+- [x] Functions
+- [x] Pygame window, clock, fill, flip
+- [x] Drawing shapes
+- [x] Keyboard input
+- [x] Moving objects (position + velocity)
+- [x] Collision detection (rectangle vs rectangle, ball vs wall)
+- [x] Keeping score
+- [x] Game states (playing, game over, restart)
 
 ### Architecture Concepts
 - What is a frame?
@@ -59,6 +59,7 @@ Asteroids introduces motion that isn't just left/right/up/down. Objects rotate. 
 - [ ] Rotation
 - [ ] Wrap-around screen edges
 - [ ] Lists of objects (multiple asteroids, multiple bullets)
+- [ ] Clamping and boundary handling
 - [ ] Spawning and destroying objects
 - [ ] Simple particle effects (debris on explosion)
 - [ ] Delta time (frame-rate independent movement)
