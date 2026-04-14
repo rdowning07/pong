@@ -30,18 +30,19 @@ def main():
 
         clock.tick(60)
         screen.fill((0, 0, 0))
+
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_UP]:
+            paddle_y -= 5
+        if keys[pygame.K_DOWN]:
+            paddle_y += 5
+        if keys[pygame.K_w]:
+            paddle2_y -= 5
+        if keys[pygame.K_s]:
+            paddle2_y += 5
  
         if score1 < 7 and score2 < 7:
     # all movement, input, collision code here
-            keys = pygame.key.get_pressed()
-            if keys[pygame.K_UP]:
-                paddle_y -= 5
-            if keys[pygame.K_DOWN]:
-                paddle_y += 5
-            if keys[pygame.K_w]:
-                paddle2_y -= 5
-            if keys[pygame.K_s]:
-                paddle2_y += 5
             
             ball_x += ball_dx
             ball_y += ball_dy
@@ -77,7 +78,7 @@ def main():
             prompt_surface = font_small.render(prompt_text, True, (255, 255, 255))
             prompt_x = (800 - prompt_surface.get_width()) // 2
             screen.blit(winner_surface, (250, 230))
-            screen.blit(prompt_surface, (220, 320))
+            screen.blit(prompt_surface, (prompt_x, 320))
             if keys[pygame.K_r]:
                 score1 = 0
                 score2 = 0
